@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-
+import {SpinnerCircularFixed} from 'spinners-react'
+import Home from './components/Home';
 function App() {
+const[isLoading,setIsLoading]=useState(true)
+
+setTimeout(()=>{
+  setIsLoading(false)
+},1000)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <h1>Flowers & Co</h1>
+    <h3>Best Flowers in the City</h3>
+    <div className="container">
+    {  isLoading ?(<SpinnerCircularFixed
+         className="spinner"
+         size={80}
+         thickness={112}
+         speed={130}
+        color="#8e4e84"
+    />):(
+    <Home/>
+    )}
     </div>
+  </>
+
+    
   );
 }
 
