@@ -17,17 +17,19 @@ function Home(){
    
     useEffect(()=>{
         dispatch(callToAPI())
+       
+    },[dispatch])
+    useEffect(()=>{
         setFlowerList(data)
         setFilteredFlowerList(data)
        
-    },[dispatch])
+    },[data])
     console.log(data,'data')
     console.log(howManyPages)
     useEffect(()=>{
         let list=flowerList.filter(flower=>selectCategory ===flower.category || selectCategory===""|| selectCategory==="All")
         setFilteredFlowerList(list)
-      },[selectCategory])
-     
+      },[filteredFlowerList])
       let catList=["All",...new Set(flowerList.map(item =>item.category))]
      useEffect(()=>{
       setHowManyPages(Math.ceil(filteredFlowerList.length /howManyElementsPerPage))
