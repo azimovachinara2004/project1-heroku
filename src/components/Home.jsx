@@ -3,6 +3,7 @@ import {useDispatch,useSelector} from 'react-redux'
 import {callToAPI} from './homeSlice'
 import Cards from './Cards'
 import Pagination from './Pagination'
+
 //import { useParams } from 'react-router-dom'
 function Home(){
     const [selectCategory,setSelectCategory]=useState("")
@@ -26,7 +27,8 @@ function Home(){
         let list=flowerList.filter(flower=>selectCategory ===flower.category || selectCategory===""|| selectCategory==="All")
         setFilteredFlowerList(list)
       },[selectCategory])
-     let catList=["All",...new Set(flowerList.map(item =>item.category))]
+     
+      let catList=["All",...new Set(flowerList.map(item =>item.category))]
      useEffect(()=>{
       setHowManyPages(Math.ceil(filteredFlowerList.length /howManyElementsPerPage))
   },[filteredFlowerList])
@@ -35,7 +37,7 @@ function Home(){
   const flowersToShow=filteredFlowerList.slice(start,end)
         return(
                  <>
-                 
+
                  {
         catList.map(category=><button className='category'
         key={category}
