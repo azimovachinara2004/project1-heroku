@@ -2,12 +2,13 @@ import { useState } from 'react';
 import './App.css';
 import {SpinnerCircularFixed} from 'spinners-react'
 import Home from './components/Home';
+//import  Router  from './components/Router';
 function App() {
 const[isLoading,setIsLoading]=useState(true)
 
-setTimeout(()=>{
+ setTimeout(()=>{
   setIsLoading(false)
-},1000)
+},1000) 
   return (
     <>
     <h1>Flowers & Co</h1>
@@ -21,7 +22,7 @@ setTimeout(()=>{
         color="#8e4e84"
     />):(
     <Home/>
-    )}
+    )} 
     </div>
   </>
 

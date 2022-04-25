@@ -1,11 +1,11 @@
 import {configureStore} from '@reduxjs/toolkit'
-import dataSlice from '../components/homeSlice'
+import flowersSlice from '../components/homeSlice'
 
 
 const store= configureStore({
   reducer:{
-      flowers:dataSlice.reducer
+      flowers:flowersSlice.reducer
   }
    
 })
-export {store}
+export default store

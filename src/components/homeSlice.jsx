@@ -6,7 +6,7 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 export const callToAPI = createAsyncThunk('api/flowers',async(obj,{state,error})=>{
     try{
         //const req= await fetch("https://mocki.io/v1/2e6bd16c-3c51-4984-830d-0995124d30db")
-        const req=await fetch("https://mocki.io/v1/ba570309-c890-412a-9f31-ff1fffbebde9")
+        const req = await fetch('https://mocki.io/v1/ba570309-c890-412a-9f31-ff1fffbebde9')
         const res = await req.json()
         return res.flowers
     }catch(error){
@@ -16,14 +16,10 @@ export const callToAPI = createAsyncThunk('api/flowers',async(obj,{state,error})
    
 })
 
-
-
-const dataSlice = createSlice({
+const flowersSlice = createSlice({
     name:"flowers",
     initialState:[],
-    reducers:{
-
-    },
+    reducers:{},
     extraReducers:{
       [callToAPI.pending]:(state,action)=>{
           return []
@@ -37,5 +33,5 @@ const dataSlice = createSlice({
     }
 })
 
-export const actions = dataSlice.actions;
-export default dataSlice
+export const actions = flowersSlice.actions;
+export default flowersSlice
