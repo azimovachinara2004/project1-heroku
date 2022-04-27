@@ -9,7 +9,7 @@ const[isLoading,setIsLoading]=useState(true)
 
  setTimeout(()=>{
   setIsLoading(false)
-},1000) 
+},4000) 
   return (
     <>
     <div className='wrapper-header'>

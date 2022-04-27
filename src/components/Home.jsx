@@ -11,18 +11,16 @@ function Home(){
     const [filteredFlowerList, setFilteredFlowerList]=useState([]);
     const[howManyPages,setHowManyPages]=useState(0)
     const[pageNow,setPageNow]=useState(0)
-     const howManyElementsPerPage=3; 
+     const howManyElementsPerPage=6; 
     const dispatch=useDispatch()
     const data= useSelector((state)=>state.flowers)
    
     useEffect(()=>{
-        dispatch(callToAPI())
-       
-    },[dispatch])
+        dispatch(callToAPI())   
+    },[])
     useEffect(()=>{
         setFlowerList(data)
-        setFilteredFlowerList(data)
-       
+        setFilteredFlowerList(data)  
     },[data])
     console.log(data,'data')
     console.log(howManyPages)
