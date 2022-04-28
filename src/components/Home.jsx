@@ -2,7 +2,7 @@ import {useEffect,useState} from 'react'
 import {useDispatch,useSelector} from 'react-redux'
 import {callToAPI} from './homeSlice'
 import Cards from './Cards'
-import Pagination from './Pagination'
+import Page from './Page'
 
 //import { useParams } from 'react-router-dom'
 function Home(){
@@ -17,13 +17,11 @@ function Home(){
    
     useEffect(()=>{
         dispatch(callToAPI())   
-    },[])
+    },[dispatch])
     useEffect(()=>{
         setFlowerList(data)
         setFilteredFlowerList(data)  
     },[data])
-    console.log(data,'data')
-    console.log(howManyPages)
     useEffect(()=>{
         let list=flowerList.filter(flower=>selectCategory ===flower.category || selectCategory===""|| selectCategory==="All")
         setFilteredFlowerList(list)
@@ -53,8 +51,7 @@ function Home(){
            
                }
          
-         <Pagination howManyPages={howManyPages} setPageNow={setPageNow} pageNow={pageNow}/>
-        
+         <Page howManyPages={howManyPages} setPageNow={setPageNow} pageNow={pageNow}/>
          </>
             
         )

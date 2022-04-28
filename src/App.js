@@ -3,13 +3,14 @@ import './App.css';
 import {SpinnerCircularFixed} from 'spinners-react'
 import Home from './components/Home';
 import Header from './components/Header'
+
 //import  Router  from './components/Router';
-function App() {
+function App(){
 const[isLoading,setIsLoading]=useState(true)
 
  setTimeout(()=>{
   setIsLoading(false)
-},4000) 
+},3000) 
   return (
     <>
     <header className='wrapper-header'>
@@ -25,7 +26,7 @@ const[isLoading,setIsLoading]=useState(true)
          speed={130}
         color="#8e4e84"
     />):(
-    <Home/>
+   <Home/>
     )} 
     </div>
   </>

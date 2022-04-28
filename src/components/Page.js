@@ -1,18 +1,19 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link,useParams} from 'react-router-dom'
 
 
-function Pagination({howManyPages,setPageNow,pageNow}) {
-    
+function Page({howManyPages,setPageNow,pageNow}) {
+    const currentPage=pageNow+1
     const pages= new Array(howManyPages).fill("page")
     return (
       <div className='pagi-container'>
           {
               pages.map((page,index)=>{
                   return(
-                <button key={`${page}${index}`}
+               <Link to={`/${page}/${currentPage}`}><button key={`${page}${index}`}
                   onClick={()=>setPageNow(index)} className="pagin-btn">
-                      {index+ 1}</button>
+                      {index+ 1}</button></Link> 
+                     
                       )
               })
           }
@@ -20,4 +21,4 @@ function Pagination({howManyPages,setPageNow,pageNow}) {
     )
 }
 
-export default Pagination
+export default Page

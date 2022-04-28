@@ -76,6 +76,9 @@ h2{
 .pagin-btn:hover{
   cursor: pointer;
 }
+.pagin-btn:active{
+color: blue;
+}
 @media screen and (max-width: 500px) {
   .cat-container{
   align-items: center;
