@@ -5,7 +5,7 @@ export default class Header extends Component {
   render() {
     return (
       <div className='header'>
-      <img src={logo} width="130px"/>
+      <img src={logo} width="110px"/>
       </div>
     )
   }

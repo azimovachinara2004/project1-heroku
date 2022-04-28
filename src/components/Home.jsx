@@ -37,14 +37,14 @@ function Home(){
   const flowersToShow=filteredFlowerList.slice(start,end)
         return(
                  <>
-
+               <div className='cat-container'>
                  {
         catList.map(category=><button className='category'
         key={category}
         onClick={()=>setSelectCategory(category)}
         >{category}</button>)
                 } 
-      
+                </div>
                {  
                flowersToShow.map(flower=>(
               <Cards key={flower.id} flower={flower}/>  

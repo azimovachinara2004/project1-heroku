@@ -12,10 +12,10 @@ const[isLoading,setIsLoading]=useState(true)
 },4000) 
   return (
     <>
-    <div className='wrapper-header'>
+    <header className='wrapper-header'>
     <Header/> 
     <h1>Flowers & Co</h1>
-    </div>
+    </header>
     <h2>Best flowers in the City</h2>
     <div className="container">
     {  isLoading ?(<SpinnerCircularFixed
